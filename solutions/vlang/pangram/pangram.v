@@ -2,10 +2,8 @@ module main
 
 fn is_pangram(phrase string) bool {
 	mut s := []string{}
-	for r in phrase.to_lower().runes_iterator() {
-		if r >= `a` && r <= `z` {
-			s << r.str()
-		}
+	for c in phrase.to_lower().split('') {
+		if c >= 'a' && c <= 'z' { s << c }
 	}
 	s.sort()
 	mut uniq := 2
