@@ -9,7 +9,7 @@ fn is_pangram(phrase string) bool {
 	}
 	s.sort()
 	mut uniq := 2
-	for i in int(1) .. s.len - 1 {
+	for i in 1 .. s.len - 1 {
 		if s[i] != s[i - 1] { uniq += 1 }
 	}
 	println(uniq)
