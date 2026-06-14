@@ -2,13 +2,16 @@ module main
 
 fn is_pangram(phrase string) bool {
 	mut s := []string{}
-	for c in phrase.to_lower().split('') {
-		if c >= 'a' && c <= 'z' { s << c }
+	for r in phrase.to_lower().runes_iterator() {
+		if r >= `a` && r <= `z` {
+			s << r.str()
+		}
 	}
 	s.sort()
-	mut uniq := 1
-	for i in 1 .. s.len { // ranges are inclusive .. exclusive
+	mut uniq := 2
+	for i in int(1) .. s.len - 1 {
 		if s[i] != s[i - 1] { uniq += 1 }
 	}
+	println(uniq)
 	return uniq == 26
 }
