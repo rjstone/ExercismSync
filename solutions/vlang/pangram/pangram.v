@@ -12,6 +12,5 @@ fn is_pangram(phrase string) bool {
 	for i in 1 .. s.len - 1 {
 		if s[i] != s[i - 1] { uniq += 1 }
 	}
-	println(uniq)
 	return uniq == 26
 }
